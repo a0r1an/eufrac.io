@@ -1,0 +1,19 @@
+{
+  "routes": [
+    { "src": "/api/youtube", "headers": {"Access-Control-Allow-Origin": "*"} },
+    { "src": "/api/spreaker", "headers": {"Access-Control-Allow-Origin": "*"} },
+    { "src": "/api/sanity", "headers": {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Headers": "*"} }
+  ],
+  "build": {
+    "env": {
+      "SITE_TITLE": "@site_title",
+      "YOUTUBE_API_KEY": "@youtube_api_key",
+      "YOUTUBE_CHANNEL_ID": "@youtube_channel_id",
+      "PODCAST_CHANNEL": "@podcast_channel",
+      "URL": "@url",
+      "SANITY_DATASET": "@sanity_dataset",
+      "SANITY_PROJECT_ID": "@sanity_project_id",
+      "SANITY_ENABLE_CDN": "@sanity_enable_cdn"
+    }
+  }
+}
