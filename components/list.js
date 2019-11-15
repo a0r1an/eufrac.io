@@ -3,7 +3,6 @@ import StoriesTeaser from './storiesTeaser'
 import styled from 'styled-components'
 
 const BlogList = styled.section`
-  background: #f7f7f7;
   padding: 4rem 2rem;
   position: relative;
   min-height: 600px;

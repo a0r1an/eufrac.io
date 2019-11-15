@@ -1,0 +1,13 @@
+html {
+  font-size: 62.5%;
+  line-height: 1;
+}
+body{
+  font-family: Montserrat;
+  background: #fff;
+}
+.container {
+  max-width:800px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}

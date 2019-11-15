@@ -19,8 +19,14 @@ class Index extends React.Component{
   render(){
     return (
     <div>
-      <Header />
-      <List data={this.props.sanityData} dataType="stories" />
+      <div className="container">
+        <Header />
+        <List data={this.props.sanityData} dataType="stories" />
+        <ul>
+          <li><a href="#">github</a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </div>
     </div>
     )
   }
