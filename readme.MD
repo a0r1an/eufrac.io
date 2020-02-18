@@ -9,4 +9,6 @@ Using Zeit and its cli Now. It deploys the app to aws and makes every page a lam
 Enviroment variables are managed using now CLI. For example `now secrets add url 'http://www.yahoo.com'`
 
 ## Sanity CMS
-Sanity.io. It's where I upload my stories. Whitelisted domain is required. 
+Sanity.io. It's where I upload my stories. Whitelisted domain is required.
+CMS app is located within `cms/`
+Content stored in cloud

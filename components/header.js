@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {animateElementsKeyFrame} from '../libs/animation.js'
 
 const HeaderArea = styled.header`
-  
+  margin: 0 0 6rem;
   h1 {
     padding: 0;
     margin: 0 0 .5rem;
@@ -18,7 +18,7 @@ const HeaderArea = styled.header`
     }
   }
 `
-class Header extends React.Component{
+export default class extends React.Component{
   constructor(props) {
     super(props);
     // this.characterE = React.createRef();
@@ -57,4 +57,3 @@ class Header extends React.Component{
     )
   }
 }
-export default Header

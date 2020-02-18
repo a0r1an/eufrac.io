@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import StoriesTeaser from './storiesTeaser'
 import styled from 'styled-components'
 
 const BlogList = styled.section`

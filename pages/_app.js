@@ -6,8 +6,8 @@ import Router from 'next/router'
 import { ThemeProvider } from 'styled-components'
 const theme = {
   colors: {
-    primary: '#5fff4f',
-    secondary: '#ff4f4f'
+    primary: '#ffaf75',
+    primaryDarker: '#f39c5d'
   }
 }
 Router.events.on('routeChangeStart', url => {
