@@ -28,7 +28,7 @@ export default class extends React.Component {
     return (
       <PostTeaser>
         <h3>
-          <Link href="/post/[name]/[id]" as={`/post/${this.props.content.title}/${this.props.content.id}`}>
+          <Link href="/post/[name]/[id]" as={`/post/${this.props.content.slug.current}/${this.props.content.id}`}>
             <a>{this.props.content.title}</a>
           </Link>
         </h3>

@@ -34,7 +34,8 @@ const sanityQuery = `*[_type == "post"]{
   "mainImage": mainImage.asset->url,
   description,
   _createdAt,
-  title
+  title,
+  slug
 }`
 
 export default class extends React.Component{

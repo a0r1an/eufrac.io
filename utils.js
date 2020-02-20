@@ -15,7 +15,8 @@ const fetchSanityFeed = async(query) => {
         id: item['_id'],
         publishedAt: item['_createdAt'],
         coverImage: item['mainImage'],
-        body: item['body']
+        body: item['body'],
+        slug: item['slug']
       });
     }
     return await filteredData;

@@ -10,13 +10,16 @@ import {fetchSanityFeed} from '../../../../utils'
 
 const PostWrapper = styled.div`
   .title{
-    font-size: 3em;
-    margin: 0 0 1rem;
+    font-size: 3.4em;
+    line-height: 1.5em;
+    margin: 0 auto 1.5rem;
+    text-align: center;
   }
   .date {
     display: block;
     font-size: 1.2em;
     margin: 0 0 1rem;
+    text-align: center;
   }
   .coverImage {
     width: 100%;
@@ -25,8 +28,16 @@ const PostWrapper = styled.div`
   }
   .content {
     font-family: 'Raleway', sans-serif;
-    font-size: 1.6em;
-    line-height: 1.5em;
+    font-size: 1.8em;
+    line-height: 1.8em;
+    p {
+      margin: 0 0 4rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .title{
+      width: 80%;
+    }
   }
 `
 const serializers = {
