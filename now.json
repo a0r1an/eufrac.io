@@ -1,14 +1,14 @@
 {
   "routes": [
-    { "src": "/api/sanity", "headers": {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Headers": "*"} }
+    { "src": "/api/sanity", "headers" :{"Access-Control-Allow-Origin": "*","Access-Control-Allow-Headers": "*"} }
   ],
   "build": {
     "env": {
-      "SITE_TITLE": "@site_title",
-      "URL": "@url",
-      "SANITY_DATASET": "@sanity_dataset",
-      "SANITY_PROJECT_ID": "@sanity_project_id",
-      "SANITY_ENABLE_CDN": "@sanity_enable_cdn"
+      "EUFRACIO_SITE_TITLE": "@site_title",
+      "EUFRACIO_URL": "@url",
+      "EUFRACIO_SANITY_DATASET": "@sanity_dataset",
+      "EUFRACIO_SANITY_PROJECT_ID": "@sanity_project_id",
+      "EUFRACIO_SANITY_ENABLE_CDN": "@sanity_enable_cdn"
     }
   }
 }

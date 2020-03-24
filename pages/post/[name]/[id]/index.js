@@ -80,8 +80,8 @@ class Post extends React.Component{
           className="content codeSnippet"
           blocks={data.body}
           serializers={serializers}
-          projectId={process.env.SANITY_PROJECT_ID}
-          dataset={process.env.SANITY_DATASET}
+          projectId={process.env.EUFRACIO_SANITY_PROJECT_ID}
+          dataset={process.env.EUFRACIO_SANITY_DATASET}
         />
         </div>
       </PostWrapper>

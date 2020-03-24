@@ -5,7 +5,7 @@ dotenv.config({silent: true})
 
 const fetchSanityFeed = async(query) => {
   try {
-    let response = await axios.post(`${process.env.URL}/api/sanity`, {query})
+    let response = await axios.post(`${process.env.EUFRACIO_URL}/api/sanity`, {query})
     let sanityData = response.data;
     let filteredData = [];
     for (let item of sanityData) {

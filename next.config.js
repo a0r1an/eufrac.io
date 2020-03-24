@@ -8,10 +8,10 @@ module.exports = {
     return config
   },
   env: {
-    SITE_TITLE: process.env.SITE_TITLE,
-    URL: process.env.URL,
-    SANITY_DATASET: process.env.SANITY_DATASET,
-    SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,
-    SANITY_ENABLE_CDN: process.env.SANITY_ENABLE_CDN,
+    EUFRACIO_SITE_TITLE: process.env.EUFRACIO_SITE_TITLE,
+    EUFRACIO_URL: process.env.EUFRACIO_URL,
+    EUFRACIO_SANITY_DATASET: process.env.EUFRACIO_SANITY_DATASET,
+    EUFRACIO_SANITY_PROJECT_ID: process.env.EUFRACIO_SANITY_PROJECT_ID,
+    EUFRACIO_SANITY_ENABLE_CDN: process.env.EUFRACIO_SANITY_ENABLE_CDN,
   }
 }
