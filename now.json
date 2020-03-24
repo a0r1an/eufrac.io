@@ -4,11 +4,11 @@
   ],
   "build": {
     "env": {
-      "EUFRACIO_SITE_TITLE": "@site_title",
-      "EUFRACIO_URL": "@url",
-      "EUFRACIO_SANITY_DATASET": "@sanity_dataset",
-      "EUFRACIO_SANITY_PROJECT_ID": "@sanity_project_id",
-      "EUFRACIO_SANITY_ENABLE_CDN": "@sanity_enable_cdn"
+      "EUFRACIO_SITE_TITLE": "@eufracio_site_title",
+      "EUFRACIO_URL": "@eufracio_url",
+      "EUFRACIO_SANITY_DATASET": "@eufracio_sanity_dataset",
+      "EUFRACIO_SANITY_PROJECT_ID": "@eufracio_sanity_project_id",
+      "EUFRACIO_SANITY_ENABLE_CDN": "@eufracio_sanity_enable_cdn"
     }
   }
 }
