@@ -29,7 +29,7 @@ const IndexPage = styled.div`
   }
 `
 
-const sanityQuery = `*[_type == "post"]{
+const sanityQuery = `*[_type == "post"] | order(_createdAt desc){
   _id,
   "mainImage": mainImage.asset->url,
   description,
@@ -58,9 +58,9 @@ export default class extends React.Component{
           )}
         </ul>
         <ul className="socialList">
-          <li><a href="#">GITHUB</a></li>
-          <li><a href="#">STACKOVERFLOW</a></li>
-          <li><a href="#">INSTAGRAM</a></li>
+          <li><a href="https://github.com/a0r1an" target="_blank">GITHUB</a></li>
+          <li><a href="https://stackoverflow.com/users/5194946/adrian-eufracio" target="_blank">STACKOVERFLOW</a></li>
+          <li><a href="https://www.instagram.com/adrian_eufracio/" target="_blank">INSTAGRAM</a></li>
         </ul>
       </div>
     </IndexPage>
