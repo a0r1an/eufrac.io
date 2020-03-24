@@ -1,19 +1,14 @@
 {
   "routes": [
-    { "src": "/api/youtube", "headers": {"Access-Control-Allow-Origin": "*"} },
-    { "src": "/api/spreaker", "headers": {"Access-Control-Allow-Origin": "*"} },
-    { "src": "/api/sanity", "headers": {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Headers": "*"} }
+    { "src": "/api/sanity", "headers" :{"Access-Control-Allow-Origin": "*","Access-Control-Allow-Headers": "*"} }
   ],
   "build": {
     "env": {
-      "SITE_TITLE": "@site_title",
-      "YOUTUBE_API_KEY": "@youtube_api_key",
-      "YOUTUBE_CHANNEL_ID": "@youtube_channel_id",
-      "PODCAST_CHANNEL": "@podcast_channel",
-      "URL": "@url",
-      "SANITY_DATASET": "@sanity_dataset",
-      "SANITY_PROJECT_ID": "@sanity_project_id",
-      "SANITY_ENABLE_CDN": "@sanity_enable_cdn"
+      "EUFRACIO_SITE_TITLE": "@eufracio_site_title",
+      "EUFRACIO_URL": "@eufracio_url",
+      "EUFRACIO_SANITY_DATASET": "@eufracio_sanity_dataset",
+      "EUFRACIO_SANITY_PROJECT_ID": "@eufracio_sanity_project_id",
+      "EUFRACIO_SANITY_ENABLE_CDN": "@eufracio_sanity_enable_cdn"
     }
   }
 }

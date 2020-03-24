@@ -3,11 +3,17 @@ html {
   line-height: 1;
 }
 body{
-  font-family: Montserrat;
+  font-family: Montserrat,sans-serif;
   background: #fff;
 }
 .container {
-  max-width:800px;
   margin: 0 auto;
-  padding: 4rem 0;
+  padding: 4rem 2rem;
+}
+
+@media only screen and (min-width:1000px) {
+  .container {
+    max-width:800px;
+    padding: 4rem 0;
+  }
 }

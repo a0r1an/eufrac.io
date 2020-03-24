@@ -19,7 +19,8 @@ export default class MyDocument extends Document {
           {/* Import CSS for nprogress */}
           <link rel='stylesheet' type='text/css' href='/static/normalize.css' />
           <link rel='stylesheet' type='text/css' href='/static/theme.css' />
-          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap" rel="stylesheet"></link>
+          <link rel='stylesheet' type='text/css' href='/static/codeSnippet.css' />
+          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800|Raleway&display=swap" rel="stylesheet"></link>
           {this.props.styleTags}
         </Head>
         <body>
