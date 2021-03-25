@@ -4,11 +4,11 @@
 - now v16.2.0?
 
 
-## Zeit Deployments
-Using Zeit and its cli Now. It deploys the app to aws and makes every page a lambda.
-Enviroment variables are managed using now CLI. For example `now secrets add url 'http://www.yahoo.com'`
+## Vercel Deployments
+Vercel is where my site is hosted. Vercel is basically a middle man for aws lambda.
+All branches pushed to github get deployed, allowing for fast testing.
+Environment Variables are set on vercel via their UI.
 
 ## Sanity CMS
-Sanity.io. It's where I upload my stories. Whitelisted domain is required.
+Sanity.io! It is where my data is stored. I publish content via a locally built Sanity CMS.
 CMS app is located within `cms/`
-Content stored in cloud

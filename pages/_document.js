@@ -21,6 +21,7 @@ export default class MyDocument extends Document {
           <link rel='stylesheet' type='text/css' href='/static/theme.css' />
           <link rel='stylesheet' type='text/css' href='/static/codeSnippet.css' />
           <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800|Raleway&display=swap" rel="stylesheet"></link>
+          <title>eufracio</title>
           {this.props.styleTags}
         </Head>
         <body>
