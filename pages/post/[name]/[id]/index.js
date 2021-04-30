@@ -1,12 +1,11 @@
-import { withRouter } from 'next/router'
+import React from 'react'
 import BlockContent from '@sanity/block-content-to-react'
 import styled from 'styled-components'
 import moment from 'moment';
-
-
+import Head from 'next/head'
 
 import Header from '../../../../components/header'
-import {fetchSanityFeed} from '../../../../utils'
+import {fetchBlogPost, fetchBlogPostsPaths} from '../../../../utils'
 
 const PostWrapper = styled.div`
   .title{
@@ -54,31 +53,50 @@ const serializers = {
     )
   }
 }
-class Post extends React.Component{
-  static async getInitialProps({query}) {
-    const sanityQuery = `*[_type == "post" && _id == "${query.id}"]{
-      _id,
-      "mainImage": mainImage.asset->url,
-      _createdAt,
-      title,
-      body
-    }`
-    let sanityData = await fetchSanityFeed(sanityQuery);
-    return { sanityData }
+
+export async function getStaticProps({params}) {
+  let postData = await fetchBlogPost(params.id);
+  return { 
+    props: {
+      postData: JSON.parse(JSON.stringify(postData))
+    },
+    revalidate: 1
   }
-  
-  render(){
-    let data = this.props.sanityData[0];
+}
+
+export async function getStaticPaths() {
+   let posts = await fetchBlogPostsPaths();
+
+   // Get the paths we want to pre-render based on posts
+   const paths = posts.map((post) => ({
+     params: { 
+       id: post.id,
+       name: post.title
+     },
+   }))
+ 
+   // We'll pre-render only these paths at build time.
+   // { fallback: false } means other routes should 404.
+   return { paths, fallback: false }
+}
+
+function Post({postData}){
     return (
       <PostWrapper>
+        <Head>
+          <title>{postData.title} | Eufrac.io</title>
+          <meta name="description" content="Hello! Name is Adrian Eufracio, Software Engineer, and I am here to talk about code stuff."></meta>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800|Raleway&display=swap" rel="stylesheet"></link>
+        </Head>
         <div className="container">
         <Header />
-        <h1 className="title">{data.title}</h1>
-        <span className="date">{moment(data.publishedAt).format('MMMM Do YYYY')}</span>
-        <img src={data.coverImage} className="coverImage" />
+        <h1 className="title">{postData.title}</h1>
+        <span className="date">{moment(postData.publishedAt).format('MMMM Do YYYY')}</span>
+        <img src={postData.coverImage} className="coverImage" />
         <BlockContent
           className="content codeSnippet"
-          blocks={data.body}
+          blocks={postData.body}
           serializers={serializers}
           projectId={process.env.EUFRACIO_SANITY_PROJECT_ID}
           dataset={process.env.EUFRACIO_SANITY_DATASET}
@@ -86,7 +104,6 @@ class Post extends React.Component{
         </div>
       </PostWrapper>
     )
-  }
 }
 
-export default withRouter(Post)
+export default Post

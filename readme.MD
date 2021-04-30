@@ -12,3 +12,6 @@ Environment Variables are set on vercel via their UI.
 ## Sanity CMS
 Sanity.io! It is where my data is stored. I publish content via a locally built Sanity CMS.
 CMS app is located within `cms/`
+
+## Nextjs
+Using Next.js framework - 10.2.0

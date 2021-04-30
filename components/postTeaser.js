@@ -1,3 +1,4 @@
+import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import moment from 'moment';
@@ -21,7 +22,7 @@ const PostTeaser = styled.div`
       box-shadow: 10px 0px 15px #00000045;
     }
   }
-  h3 {
+  h2 {
     color: #000;
     font-size: 3em;
     margin: 0 0 1rem;
@@ -41,12 +42,12 @@ export default class extends React.Component {
   render() {
     return (
       <PostTeaser>
-        <Link href="/post/[name]/[id]" as={`/post/${this.props.content.slug.current}/${this.props.content.id}`}>
+        <Link href="/post/[name]/[id]" as={`/post/${this.props.slugTitle}/${this.props.postId}`}>
           <a>
-            <h3>{this.props.content.title}</h3>
-            <span className="date">{moment(this.props.content.publishedAt).format('MMMM Do YYYY')}</span>
+            <h2>{this.props.postTitle}</h2>
+            <span className="date">{moment(this.props.publishedAt).format('MMMM Do YYYY')}</span>
             <div className="contentContainer">
-              <p>{this.props.content.description}</p>
+              <p>{this.props.postDescription}</p>
             </div>
           </a>
         </Link>

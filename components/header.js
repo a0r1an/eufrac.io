@@ -1,3 +1,4 @@
+import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import {animateElementsKeyFrame} from '../libs/animation.js'
@@ -38,7 +39,7 @@ export default class extends React.Component{
       <HeaderArea>
         <div className="logo">
           <h1>
-            <Link href="/index">
+            <Link href="/">
               <a>
                 <span ref={characterE => (this.characterE = characterE)}>e</span>
                 <span ref={characterU => (this.characterU = characterU)}>u</span>

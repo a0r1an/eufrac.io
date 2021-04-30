@@ -1,7 +1,10 @@
+import React from 'react'
+import Head from 'next/head'
+import styled from 'styled-components'
+
 import Header from '../components/header'
 import PostTeaser from '../components/postTeaser'
-import styled from 'styled-components'
-import {fetchSanityFeed} from '../utils'
+import {fetchBlogFeed} from '../utils'
 
 const IndexPage = styled.div`
   margin: 0 0 3rem;
@@ -28,42 +31,49 @@ const IndexPage = styled.div`
     }
   }
 `
-
-const sanityQuery = `*[_type == "post"] | order(_createdAt desc){
-  _id,
-  "mainImage": mainImage.asset->url,
-  description,
-  _createdAt,
-  title,
-  slug
-}`
-
-export default class extends React.Component{
-  
-  static async getInitialProps() {
-      let sanityData = await fetchSanityFeed(sanityQuery);
-      return { sanityData }
+export async function getStaticProps() {
+  const blogData =  await fetchBlogFeed();
+  return { 
+    props: {
+      blogData: JSON.parse(JSON.stringify(blogData))
+    },
+    revalidate: 1
   }
-  render(){
-    let blogData = this.props.sanityData;
-    return (
+}
+
+function Index({blogData}){
+  return (
     <IndexPage>
+      <Head>
+        <title>Eufrac.io</title>
+        <meta name="description" content="Hello! Name is Adrian Eufracio, Software Engineer, and I am here to talk about code stuff."></meta>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800|Raleway&display=swap" rel="stylesheet"></link>
+      </Head>
       <div className="container">
         <Header />
         <ul className="blogList">
-          {blogData.map(item => 
+          {blogData && blogData.map(item => 
             <li key={item.id} >
-              <PostTeaser key={item.id} content={item} />
+                <PostTeaser 
+                  key={item.id} 
+                  publishedAt={item.publishedAt} 
+                  postTitle={item.title} 
+                  postDescription={item.description} 
+                  slugTitle={item.slug.current} 
+                  postId={item.id} 
+                />
             </li>
           )}
         </ul>
         <ul className="socialList">
-          <li><a href="https://github.com/a0r1an" target="_blank">GITHUB</a></li>
-          <li><a href="https://stackoverflow.com/users/5194946/adrian-eufracio" target="_blank">STACKOVERFLOW</a></li>
-          <li><a href="https://www.instagram.com/adrian_eufracio/" target="_blank">INSTAGRAM</a></li>
+          <li><a href="https://github.com/a0r1an" target="_blank" rel="noopener">GITHUB</a></li>
+          <li><a href="https://stackoverflow.com/users/5194946/adrian-eufracio" target="_blank" rel="noopener">STACKOVERFLOW</a></li>
+          <li><a href="https://www.instagram.com/adrian_eufracio/" target="_blank" rel="noopener">INSTAGRAM</a></li>
         </ul>
       </div>
     </IndexPage>
-    )
-  }
+  )
 }
+
+export default Index
