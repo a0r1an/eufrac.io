@@ -85,9 +85,6 @@ function Post({postData}){
       <PostWrapper>
         <Head>
           <title>{postData.title} | Eufrac.io</title>
-          <meta name="description" content="Hello! Name is Adrian Eufracio, Software Engineer, and I am here to talk about code stuff."></meta>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800|Raleway&display=swap" rel="stylesheet"></link>
         </Head>
         <div className="container">
         <Header />
