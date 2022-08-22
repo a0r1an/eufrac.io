@@ -1,24 +1,30 @@
 {
   "root": true,
-  "api": {
-    "projectId": "lqhh779i",
-    "dataset": "production"
-  },
   "project": {
     "name": "eufracioblog"
   },
+  "api": {
+    "projectId": "lqhh779i",
+    "dataset": "development"
+  },
   "plugins": [
     "@sanity/base",
-    "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/code-input"
   ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
   "parts": [
     {
       "name": "part:@sanity/base/schema",
-      "path": "./schemas/schema.js"
+      "path": "./schemas/schema"
     }
   ]
 }

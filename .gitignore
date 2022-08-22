@@ -5,3 +5,4 @@
 .next
 .DS_STORE
 .vercel
+package-lock.json
